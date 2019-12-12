@@ -1,5 +1,4 @@
 /*global Phaser*/
-import * as ChangeScene from "./ChangeScene.js";
 var platforms;
 var doors;
 var haveKey;
@@ -54,8 +53,6 @@ export default class Level1 extends Phaser.Scene {
       this.registry.get('music')[1].play();
     }
 
-
-    ChangeScene.addSceneEventListeners(this);
     var background = this.add.sprite(1000, 500, 'background').setScale(1.1);
 
     // ***********************WATER*************************
@@ -527,8 +524,6 @@ export default class Level1 extends Phaser.Scene {
     if(this.gameOver)
     {
         this.physics.pause();
-        // Event listener to change scenes
-        ChangeScene.addSceneEventListeners(this);
         this.scene.start('GameOver');
     }
 //*******************************END OF GAME OVER CHANGE SCENE
@@ -608,7 +603,6 @@ hpChange (thing, hpplus, thishp, id){
   sceneRoom() {
     if (uplook <= 0) return;
     console.log(this.hptrack);
-    ChangeScene.addSceneEventListeners(this);
     this.registry.set('waveloco', this.water.y);
     if (this.haveKey == true){
       this.scene.start("RoomScene", {haveKey: this.haveKey, hptrack: this.hptrack});
@@ -619,7 +613,6 @@ hpChange (thing, hpplus, thishp, id){
   }
   sceneRoomKey() {
     if (uplook <= 0) return;
-    ChangeScene.addSceneEventListeners(this);
     this.registry.set('waveloco', this.water.y);
     this.registry.set('currentHP', this.hptrack);
     this.registry.set('HealItem', this.numShield);
@@ -628,7 +621,6 @@ hpChange (thing, hpplus, thishp, id){
   sceneNext() {
     if (uplook <= 0)  return;
     if(this.haveKey == true){
-      ChangeScene.addSceneEventListeners(this);
       this.registry.set('waveloco', 1650);
       this.registry.set('NewWeed', 0)
       this.registry.set('currentHP', this.hptrack);

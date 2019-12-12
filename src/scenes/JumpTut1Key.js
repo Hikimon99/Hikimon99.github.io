@@ -1,5 +1,4 @@
 /*global Phaser*/
-import * as ChangeScene from "./ChangeScene.js";
 var platforms;
 var floor;
 var rug;
@@ -45,9 +44,6 @@ export default class JumpTut1Key extends Phaser.Scene {
     this.registry.get('music')[2].stop();
     this.registry.get('music')[3].stop();
     this.registry.get('music')[4].stop();
-
-    // Event listener to change scenes
-    ChangeScene.addSceneEventListeners(this);
 
     //Add background to scene
     this.cameras.main.setBackgroundColor(0xfcecbd);
@@ -214,7 +210,6 @@ export default class JumpTut1Key extends Phaser.Scene {
   }
   sceneRoom() {
     if (uplook <= 0) return;
-    ChangeScene.addSceneEventListeners(this);
     this.scene.start("Level1s", {haveKey: this.haveKey, hptrack: this.hptrack});
   }
 }

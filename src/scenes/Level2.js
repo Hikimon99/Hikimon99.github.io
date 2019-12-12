@@ -1,5 +1,4 @@
 /*global Phaser*/
-import * as ChangeScene from "./ChangeScene.js";
 var platforms;
 var doors;
 var doors2;
@@ -72,8 +71,6 @@ export default class Level2 extends Phaser.Scene {
     b1.on("pointerup", function() {
       this.scene.start("SelectScene");
     }, this);
-    // Event listener to change scenes
-    ChangeScene.addSceneEventListeners(this);
 
     // WATER****************************************
     this.water = this.physics.add.sprite(900, this.registry.get('waveloco'), 'waves');
@@ -453,8 +450,6 @@ export default class Level2 extends Phaser.Scene {
     if (this.gameOver)
     {
         this.physics.pause();
-        // Event listener to change scenes
-        ChangeScene.addSceneEventListeners(this);
         this.scene.start('GameOver');
     }
     //Set speed of player
@@ -781,7 +776,6 @@ export default class Level2 extends Phaser.Scene {
   }
   sceneRoomKey() {
     if (uplook <= 0) return;
-    ChangeScene.addSceneEventListeners(this);
     this.registry.set('waveloco', this.water.y);
     this.registry.set('currentHP', this.hptrack);
     this.registry.set('HealItem', this.numShield);
@@ -789,13 +783,11 @@ export default class Level2 extends Phaser.Scene {
   }
   sceneRoom() {
     if (uplook <= 0) return;
-    ChangeScene.addSceneEventListeners(this);
     this.registry.set('waveloco', this.water.y);
     this.scene.start("RoomScene2", {haveKey: this.haveKey, hptrack: this.hptrack, level: this.level});
   }
   sceneNext() {
     if (uplook <= 0) return;
-    ChangeScene.addSceneEventListeners(this);
     if(this.haveKey == true){
       this.registry.set('waveloco', 1650);
       this.registry.set('NewWeed', 0)

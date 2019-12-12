@@ -1,5 +1,4 @@
 /*global Phaser*/
-import * as ChangeScene from './ChangeScene.js';
 export default class StartScene extends Phaser.Scene {
   constructor () {
     super('StartScene');
@@ -167,8 +166,6 @@ export default class StartScene extends Phaser.Scene {
     this.registry.set('levelskip', 1);
     this.registry.set('waveloco', 1550)
 
-    //Add event listeners
-    ChangeScene.addSceneEventListeners(this);
     this.haveKey = false;
     this.hptrack = 1.0;
     this.registry.set('currentHP', 5);

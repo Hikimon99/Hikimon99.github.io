@@ -1,5 +1,4 @@
 /*global Phaser*/
-import * as ChangeScene from "./ChangeScene.js";
 var platforms;
 var doors;
 var doors2;
@@ -38,7 +37,7 @@ export default class Level1 extends Phaser.Scene {
       this.registry.get('music')[4].stop();
       this.registry.get('music')[1].play();
     }
-    
+
     var background = this.add.sprite(1000, 600, 'background').setScale(1.1);
     var b1 = this.add.sprite(60, 40, 'start-button', 4).setScale(0.7).setInteractive();
     b1.setScale(.4);
@@ -54,8 +53,6 @@ export default class Level1 extends Phaser.Scene {
       this.scene.start("SelectScene");
     }, this
   );
-    // Event listener to change scenes
-    ChangeScene.addSceneEventListeners(this);
     //Create the scene
     //Add background to scene
 
@@ -344,8 +341,6 @@ export default class Level1 extends Phaser.Scene {
     if( this.gameOver)
     {
         this.physics.pause();
-        // Event listener to change scenes
-        ChangeScene.addSceneEventListeners(this);
         this.scene.start('GameOver');
     }
 //*******************************END OF GAME OVER CHANGE SCENE
@@ -413,17 +408,14 @@ export default class Level1 extends Phaser.Scene {
   sceneRoomKey() {
     if (uplook <= 0) return;
     this.registry.set('waveloco', this.water.y);
-    ChangeScene.addSceneEventListeners(this);
     this.scene.start("RoomSceneKey", {haveKey: this.haveKey, hptrack: this.hptrack});
   }
   sceneRoom() {
     if (uplook <= 0) return;
-    ChangeScene.addSceneEventListeners(this);
     this.scene.start("RoomScene", {haveKey: this.haveKey, hptrack: this.hptrack});
   }
   sceneNext() {
     if (uplook <= 0) return;
-    ChangeScene.addSceneEventListeners(this);
     if(this.haveKey == true){
       this.registry.set('waveloco', 1550);
       this.sound.play('nextlevel');

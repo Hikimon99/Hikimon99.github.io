@@ -1,5 +1,4 @@
 /*global Phaser*/
-import * as ChangeScene from "./ChangeScene.js";
 var platforms;
 var doors, doors2, doors3;
 var haveSwordss;
@@ -79,9 +78,6 @@ export default class Level3 extends Phaser.Scene {
 
   create (data) {
     this.level = 3;
-    // Event listener to change scenes
-    ChangeScene.addSceneEventListeners(this);
-
     if (!this.registry.get('music')[1].isPlaying) {
       this.registry.get('music')[0].stop();
       this.registry.get('music')[2].stop();
@@ -482,8 +478,6 @@ export default class Level3 extends Phaser.Scene {
     if (this.gameOver)
     {
         this.physics.pause();
-        // Event listener to change scenes
-        ChangeScene.addSceneEventListeners(this);
         this.scene.start('GameOver');
     }
     //Set speed of player
@@ -684,17 +678,14 @@ export default class Level3 extends Phaser.Scene {
   }
   sceneRoomKey() {
     if (uplook <= 0) return;
-    ChangeScene.addSceneEventListeners(this);
     this.scene.start("RoomSceneKey2", {haveKey: this.haveKey, hptrack: this.hptrack, level: this.level});
   }
   sceneRoom() {
     if (uplook <= 0) return;
-    ChangeScene.addSceneEventListeners(this);
     this.scene.start("RoomScene2", {haveKey: this.haveKey, hptrack: this.hptrack, level: this.level});
   }
   sceneNext() {
     if (uplook <= 0) return;
-    ChangeScene.addSceneEventListeners(this);
     if(this.haveKey == true){
       this.scene.start("Level4", {haveKey: false, hptrack: this.hptrack,  haveVisit: 0});
     }

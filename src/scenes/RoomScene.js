@@ -1,5 +1,4 @@
 /*global Phaser*/
-import * as ChangeScene from "./ChangeScene.js";
 var platforms;
 var floor;
 var rug;
@@ -70,8 +69,6 @@ export default class RoomScene extends Phaser.Scene {
     this.registry.get('music')[4].stop();
     this.registry.get('music')[2].play();
 
-    // Event listener to change scenes
-    ChangeScene.addSceneEventListeners(this);
 
     //Add background to scene
     this.cameras.main.setBackgroundColor(0xfcecbd);
@@ -219,8 +216,6 @@ export default class RoomScene extends Phaser.Scene {
     if (this.gameOver)
     {
         this.physics.pause();
-        // Event listener to change scenes
-        ChangeScene.addSceneEventListeners(this);
         this.scene.start('GameOver');
     }
     // console.log(this.hptrack);
@@ -391,7 +386,6 @@ export default class RoomScene extends Phaser.Scene {
   }
   sceneRoom() {
     if (uplook <= 0) return;
-    ChangeScene.addSceneEventListeners(this);
     this.registry.set('currentHP', this.hptrack);
     this.registry.set('HealItem', this.numShield);
     this.scene.start("Level3", {haveKey: false, haveVisit: 0});

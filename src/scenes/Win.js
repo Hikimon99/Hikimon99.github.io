@@ -1,5 +1,4 @@
 /*global Phaser*/
-import * as ChangeScene from "./ChangeScene.js";
 var platforms;
 
 export default class Win extends Phaser.Scene {
@@ -57,9 +56,6 @@ export default class Win extends Phaser.Scene {
     var winsong = this.sound.add('winmusic', {loop: true});
     winsong.play(); // debug check
     */
-
-    // Event listener to change scenes
-    ChangeScene.addSceneEventListeners(this);
 
     //Add background to scene
     var win = this.add.image(400, 300, 'win-screen').setScale(.7);

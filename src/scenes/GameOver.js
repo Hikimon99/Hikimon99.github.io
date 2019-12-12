@@ -1,5 +1,4 @@
 /*global Phaser*/
-import * as ChangeScene from "./ChangeScene.js";
 var platforms;
 
 export default class GameOver extends Phaser.Scene {
@@ -56,9 +55,6 @@ export default class GameOver extends Phaser.Scene {
     this.registry.get('music')[3].stop();
     this.registry.get('music')[4].stop();
     this.registry.get('music')[0].play();
-
-    // Event listener to change scenes
-    ChangeScene.addSceneEventListeners(this);
 
     //Add background to scene
     var lose = this.add.image(500, 490, 'lose-background').setScale(0.66);

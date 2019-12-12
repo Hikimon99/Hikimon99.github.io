@@ -1,5 +1,4 @@
 /*global Phaser*/
-import * as ChangeScene from './ChangeScene.js';
 export default class HelpScene extends Phaser.Scene {
   constructor () {
     super('HelpScene');
@@ -37,9 +36,6 @@ export default class HelpScene extends Phaser.Scene {
     this.registry.get('music')[3].stop();
     // this.registry.get('music')[4].stop();
     // this.registry.get('music')[4].play();
-
-    //Add event listeners
-    ChangeScene.addSceneEventListeners(this);
 
     //Create the scene
     var help = this.add.image(this.centerX, this.centerY, 'help-screen').setScale(0.77);
