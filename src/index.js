@@ -3,7 +3,6 @@ import BootScene from './scenes/BootScene.js';
 import StartScene from './scenes/StartScene.js';
 import SelectScene from './scenes/SelectScene.js';
 import HelpScene from './scenes/HelpScene.js';
-import JumpTut1 from './scenes/JumpTut1.js';
 import Level1 from './scenes/Level1.js';
 import Level2 from './scenes/Level2.js';
 import Level3 from './scenes/Level3.js';
@@ -25,7 +24,6 @@ class Game extends Phaser.Game {
     this.scene.add('Boot', BootScene);
     this.scene.add('StartScene', StartScene);
     this.scene.add('HelpScene', HelpScene);
-    this.scene.add('JumpTut1', JumpTut1);
     this.scene.add('Level1', Level1);
     this.scene.add('Level2', Level2);
     this.scene.add('Level3', Level3);
