@@ -316,7 +316,6 @@ export default class RoomSceneKey extends Phaser.Scene {
   }
   sceneRoom() {
     if (uplook <= 0) return;
-    ChangeScene.addSceneEventListeners(this);
     // this.sound.play('slamdoor');
     this.scene.start("Level1s", {haveKey: this.haveKey, hptrack: this.hptrack});
   }

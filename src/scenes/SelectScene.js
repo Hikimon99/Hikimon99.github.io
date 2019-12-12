@@ -37,9 +37,6 @@ export default class StartScene extends Phaser.Scene {
     this.registry.set('waveloco', 1650);
     this.registry.set('NewWeed', 0);
 
-    //Add event listeners
-    ChangeScene.addSceneEventListeners(this);
-
     //Create the scene
     this.cameras.main.setBackgroundColor(0x3874d6);
 
