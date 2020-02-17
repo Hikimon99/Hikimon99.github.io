@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Tomorrow&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quantico&display=swap');
+
+body{
+    padding: 0px;
+    margin: 0px;
+
+    /* Body */
+    font-family: 'Maven Pro', sans-serif;
+
+    /* Title */
+    font-family: 'Tomorrow', sans-serif;
+
+    /* Headings */
+    font-family: 'Quantico', sans-serif;
+};
