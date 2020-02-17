@@ -1,17 +1,96 @@
-@import url('https://fonts.googleapis.com/css?family=Maven+Pro&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Tomorrow&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Quantico&display=swap');
+body, html {
+  height: 100%;
+}
+.navBar{
+}
+  .navBar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #90b5e8;
+  }
+  .navBar li a{
+    display: inline;
+    padding: 14px 16px;
+    border-right: 1px solid #bbb;
+    float: left;
+    color: white;
+    margin: 0;
+  }
+.pageHeader {
+  background-image: url("../assets/HeadImg.jpg");
+  height: 70%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  display: block;
+}
+  .pageHeader .textHeader{
+    width: 100%;
+    height: 50%;
+    text-align: center;
+  }
+    .pageHeader .textHeader h1 {
+      padding-top: 7%;
+      font-family: "Times New Roman", sans-serif;
+      color: black;
+      font-size: 120px;
+      margin-bottom: 10px;
+    }
+    .pageHeader .textHeader h2 {
+      font-family: "Times New Roman", sans-serif;
+      color: black;
+      font-size: 20px;
+    }
+    .pageHeader .textHeader h3 {
+      font-family: "Times New Roman", sans-serif;
+      color: black;
+      font-size: 20px;
+    }
+    .pageHeader .textHeader span {
+      background-color: white;
+    }
 
-body{
-    padding: 0px;
-    margin: 0px;
+.introduction{
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+  .introduction h1 {
+  font-size: 50px;
+  font-family: "Times New Roman", sans-serif;
+  }
+  .introduction p {
+    font-size: 26px;
+  }
 
-    /* Body */
-    font-family: 'Maven Pro', sans-serif;
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
 
-    /* Title */
-    font-family: 'Tomorrow', sans-serif;
-
-    /* Headings */
-    font-family: 'Quantico', sans-serif;
-};
+.marginer{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+  .marginer .leftsection{
+    margin-left: 100px;
+  }
+  .marginer .rightsection{
+    margin-right: 100px;
+  }
